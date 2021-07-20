@@ -1,5 +1,7 @@
 # toggleterm.vim
 
+![ToggleTerm Demo](./toggle_term.gif)
+
 ## Introduction
 A simple plugin that extends Vim's terminal feature to make it toggle-able.
 
