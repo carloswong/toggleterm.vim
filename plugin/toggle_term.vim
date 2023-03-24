@@ -19,7 +19,7 @@ noremap <silent> <script> <Plug>ToggletermToggle  <SID>Toggle
 noremap <silent> <script> <SID>Toggle  :call <SID>Toggle()<CR>
 
 " Constants
-let s:term_name = "toggle_term"
+let s:term_name = "#ToggleTerm#"
 let s:latest_window_ids = {1: -1}  " tabpage => window_id
 
 " Customizations
@@ -57,7 +57,7 @@ function s:Toggle()
         execute printf("%s call term_start('%s', {'term_name': '%s', 'term_finish': 'close', 'term_kill': 'kill'})", s:toggle_term_position, &shell, s:term_name)
         setlocal termwinsize=""
     elseif l:term_hidden
-        execute printf("%s new", s:toggle_term_position)
+        execute printf("%s sp", s:toggle_term_position)
         execute printf("buffer %d", bufnr(s:term_name))
 
         " Make sure we do not get any errors when trying to go to insert mode
